@@ -10,7 +10,7 @@ pipeline {
         stage('pull scm') {
             steps {
                 // Get some code from a GitHub repository
-                git credentialsId: 'github', url: 'git@github.com:vamsi557/jenkins_test.git'
+                git credentialsId: 'github', url: 'git@github.com:sathishbob/jenkins_test.git'
 		}
 	}
 
@@ -30,5 +30,11 @@ pipeline {
                     archiveArtifacts 'api-gateway/target/*.jar'
            }
         }
+
+	stage('print') {
+		steps {
+			sh "echo testing"
+		}
+	}
     }
 }
